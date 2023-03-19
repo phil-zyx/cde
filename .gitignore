@@ -1,6 +1,6 @@
 .idea
 .vscode
-application.yaml
+application.yml
 *.out
 /bin
 /logs
