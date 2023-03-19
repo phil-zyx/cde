@@ -1,0 +1,12 @@
+port: 8088 # 端口
+logFile: ./logs/cde.log # 日志文件
+## 数据库连接
+database:
+  driver: mysql ## 暂时只支持mysql
+  host: localhost
+  port: 3306
+  user: user
+  pass: password
+  dbname: cde_db
+  charset: utf8mb4
+  loc: Asia/Shanghai

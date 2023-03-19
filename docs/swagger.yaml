@@ -1,0 +1,87 @@
+definitions:
+  model.Admin:
+    properties:
+      avatar:
+        description: 头像
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      email:
+        description: 邮箱
+        type: string
+      group:
+        description: 角色组 1,2,3,4
+        type: string
+      id:
+        type: integer
+      loginAt:
+        description: 登录时间
+        type: string
+      loginIP:
+        description: 登录IP
+        type: string
+      password:
+        description: 密码
+        type: string
+      phone:
+        description: 手机号
+        type: string
+      updatedAt:
+        type: string
+      userNick:
+        description: 昵称
+        type: string
+      username:
+        description: 用户名
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /account/login:
+    post:
+      consumes:
+      - application/json
+      description: 登录
+      parameters:
+      - description: 用户名
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/model.Admin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 登录
+      tags:
+      - admin
+  /account/register:
+    post:
+      consumes:
+      - application/json
+      description: 注册
+      parameters:
+      - description: 参数
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.Admin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 注册
+      tags:
+      - admin
+swagger: "2.0"
